@@ -1,10 +1,10 @@
 # Use an official Node.js runtime as a parent image
-FROM node:14
+FROM node:18
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy the package.json and package-lock.json files
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
@@ -17,4 +17,5 @@ COPY . .
 EXPOSE 3000
 
 # Define the command to run the app
-CMD ["node", "index.js"]
+#CMD ["node", "src/index.js"]
+CMD ["npx", "nodemon", "src/index.js"]

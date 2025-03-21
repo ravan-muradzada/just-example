@@ -13,7 +13,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/blog-app')
   .catch(err => console.log('MongoDB connection error:', err));
 
 
-app.get('/hello', (req, res) => res.send('Hello world from docker learning!'));
+app.get('/hello', (req, res) => res.send('Hello world from docker learning!1'));
+
+app.get('/', (req, res)=> res.send('yeah man'))
 
 // Start the server
 app.listen(port, () => {
